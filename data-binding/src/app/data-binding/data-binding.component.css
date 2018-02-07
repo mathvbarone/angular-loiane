@@ -1,0 +1,6 @@
+.hightlight{
+    background-color: yellow;
+    font-weight: bold;
+    transition: linear 0.2s all;
+    padding-left:2rem;
+}
