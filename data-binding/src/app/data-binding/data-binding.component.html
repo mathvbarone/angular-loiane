@@ -78,15 +78,12 @@
             <h3>Event Binding</h3>
     
             <div>
-                <button (click)="salvarValor(campoInput.value)"  class="btn btn-primary">Me clique!</button>  
+                <button class="btn btn-primary">Me clique!</button>  
                 
                 <br><br>
     
                 <input type="text"
-                #campoInput
-                (keyup)="onKeyUp($event)"
-                (keyup.enter)="salvarValor(campoInput.value)"
-                (blur)="salvarValor(campoInput.value)"
+
                 />
             
                 <p>O valor atual é: {{ valorAtual }}</p>
@@ -95,9 +92,7 @@
                 <br>
 
                 <p
-                (mouseover)="onMouseOverOut($event)"
-                (mouseout)="onMouseOverOut($event)"
-                [class.hightlight]="isMouseOver"
+
                 >
                     Passe o mouse sobre mim
                 </p>
