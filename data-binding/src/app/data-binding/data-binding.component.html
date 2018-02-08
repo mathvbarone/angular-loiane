@@ -1,110 +1,122 @@
 <section class="container">
 
-<!-- <section class="property-binding ">
-  <article>
-      <h3>Interpolation/Interpolação</h3>
-      <p>String renderizada com interpolação: {{ url }}</p>
-      <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
-      <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
-      <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
-  </article>
+    <!-- <section class="property-binding ">
+        <article>
+            <h3>Interpolation/Interpolação</h3>
+            <p>String renderizada com interpolação: {{ url }}</p>
+            <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+            <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+            <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+        </article>
 
-  <article>
-    <h3>Property Binding</h3>    
-    <img src="{{ urlImagem }}">
-    <img [src]="urlImagem">
-    <img bind-src="urlImagem">
-  </article>
+        <article>
+            <h3>Property Binding</h3>
+            <img src="{{ urlImagem }}">
+            <img [src]="urlImagem">
+            <img bind-src="urlImagem">
+        </article>
 
-    <article>
-        <h3>Class e Style Binding</h3>
+        <article>
+            <h3>Class e Style Binding</h3>
 
-        <div>
-            <h4>Selecione uma classe:</h4>
-        
-            <select #classe (change)=0>
-                <option value="alert-success">Sucesso</option>
-                <option value="alert-info">Info</option>
-                <option value="alert-warning">Alerta</option>
-                <option value="alert-danger">Erro</option>
-            </select>
-            <br><br>
+            <div>
+                <h4>Selecione uma classe:</h4>
 
-            <div class="alert {{ classe.value }}">
-                Texto colorido de acordo com o combobox
-            </div>
+                <select #classe (change)=0>
+                    <option value="alert-success">Sucesso</option>
+                    <option value="alert-info">Info</option>
+                    <option value="alert-warning">Alerta</option>
+                    <option value="alert-danger">Erro</option>
+                </select>
+                <br>
+                <br>
 
-            <br><br>
+                <div class="alert {{ classe.value }}">
+                    Texto colorido de acordo com o combobox
+                </div>
 
-            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
-                <strong>Well done!</strong> You successfully read this success alert message.
-            </div>
-            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
-                <strong>Well done!</strong> You successfully read this info alert message.
-            </div>
-            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
-                <strong>Well done!</strong> You successfully read this warning alert message.
-            </div>
-            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+                <br>
+                <br>
+
+                <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+                    <strong>Well done!</strong> You successfully read this success alert message.
+                </div>
+                <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+                    <strong>Well done!</strong> You successfully read this info alert message.
+                </div>
+                <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+                    <strong>Well done!</strong> You successfully read this warning alert message.
+                </div>
+                <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
                     <strong>Well done!</strong> You successfully read this danger alert message.
+                </div>
+
+                <br>
+                <br>
+
+                <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
+                    Mensagem só aparece em caso de
+                    <strong>Erro!</strong>
+                </div>
+
+                <div class="alert alert-success" [style.display]="classe.value === 'alert-success' ? 'block' : 'none'">
+                    Mensagem só aparece em caso de
+                    <strong>Sucesso!</strong>
+                </div>
+
+                <div class="alert alert-warning" [style.display]="classe.value === 'alert-warning' ? 'block' : 'none'">
+                    Mensagem só aparece em caso de
+                    <strong>Alerta!</strong>
+                </div>
+
+                <div class="alert alert-info" [style.display]="classe.value === 'alert-info' ? 'block' : 'none'">
+                    Mensagem só aparece em caso de
+                    <strong>Info!</strong>
+                </div>
+
             </div>
+        </article>
 
-            <br><br>
+    </section>
 
-            <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
-                Mensagem só aparece em caso de <strong>Erro!</strong>
-            </div>
-            
-            <div class="alert alert-success" [style.display]="classe.value === 'alert-success' ? 'block' : 'none'">
-                Mensagem só aparece em caso de <strong>Sucesso!</strong>
-            </div>
-
-            <div class="alert alert-warning" [style.display]="classe.value === 'alert-warning' ? 'block' : 'none'">
-                Mensagem só aparece em caso de <strong>Alerta!</strong>
-            </div>
-
-            <div class="alert alert-info" [style.display]="classe.value === 'alert-info' ? 'block' : 'none'">
-                Mensagem só aparece em caso de <strong>Info!</strong>
-            </div>
-
-        </div>
-    </article>
-
-</section> -->
-
-
-<section class="event-binding">
+    <section class="event-binding">
         <article>
             <h3>Event Binding</h3>
-    
+
             <div>
-                <button class="btn btn-primary"
-                (click)="salvarValor(campoInput.value)"
-                >Salvar Valor</button>  
-                
-                <br><br>
-    
-                <input type="text"
-                (keyup)="onKeyUp($event)"
-                (keyup.enter)="salvarValor(campoInput.value)"
-                (blur)="salvarValor(campoInput.value)"
-                #campoInput
-                />
-            
+                <button class="btn btn-primary" (click)="salvarValor(campoInput.value)">Salvar Valor</button>
+
+                <br>
+                <br>
+
+                <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)"
+                    #campoInput />
+
                 <p>O valor atual é: {{ valorAtual }}</p>
                 <p>O valor salvo é: {{ valorSalvo }}</p>
 
                 <br>
 
-                <p
-                (mouseover)="onMouseOverOut()"
-                (mouseout)="onMouseOverOut()"
-                [class.hightlight]="isMouseOver"
-                > 
+                <p (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.hightlight]="isMouseOver">
                     Passe o mouse sobre mim
                 </p>
             </div>
         </article>
+    </section> -->
+
+    <section class="two-way-binding">
+
+            <h3>Two-way Data Binding</h3>
+
+        <input type="text"
+            [value]="nome"
+            (input)="nome = $event.target.value"
+        >
+
+        <p>
+            Meu nome é {{ nome }}
+        </p>
+
     </section>
 
 </section>
