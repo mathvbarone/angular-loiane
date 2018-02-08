@@ -23,8 +23,8 @@ export class DataBindingComponent implements OnInit {
   }
 
   //DATA BINDING
-  clickMe(){
-    console.log("Clickado!")
+  btnClick(){
+    console.log("Aprende saporra");
   }
 
   onKeyUp(evento){
@@ -34,7 +34,6 @@ export class DataBindingComponent implements OnInit {
   salvarValor(valor){
     this.valorSalvo = valor;
   }
-
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
   }
