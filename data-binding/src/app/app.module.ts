@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 
 import { AlertModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AlertModule } from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     AlertModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
